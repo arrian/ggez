@@ -19,11 +19,11 @@ use crate::error::GameResult;
 /// window info, DPI, rendering pipeline state, etc.
 ///
 /// As an end-user you shouldn't ever have to touch this.
-pub(crate) struct GraphicsContextGeneric<B>
+pub struct GraphicsContextGeneric<B>
 where
     B: BackendSpec,
 {
-    shader_globals: Globals,
+    pub shader_globals: Globals,
     pub(crate) projection: Matrix4,
     pub(crate) modelview_stack: Vec<Matrix4>,
     pub(crate) white_image: ImageGeneric<B>,
